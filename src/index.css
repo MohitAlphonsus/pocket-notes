@@ -2,9 +2,17 @@
 
 :root {
   --color-accent-light: #DAE5F5;
-  --color-accent-dark: #275392;
+  --color-accent-dark: #322289;
   --color-white: #fff;
   --color-dark: #333;
+
+  /* color options */
+  --color-option-1: #B38BFA;
+  --color-option-2: #FF79F2;
+  --color-option-3: #43E6FC;
+  --color-option-4: #F19576;
+  --color-option-5: #0047FF;
+  --color-option-6: #6691FF;
 
   --font: "Roboto", sans-serif;
 }
@@ -21,9 +29,16 @@ html {
 
 body {
   font-family: var(--font);
+  background-color: #333;
+  padding: 1rem;
 }
 
 .app {
   display: flex;
-  min-height: 100vh;
+  height: calc(100dvh - 2rem);
+  min-width: 130rem;
+  margin: 0 auto;
+  border-radius: 5px;
+  overflow: hidden;
+  color: var(--color-dark);
 }
