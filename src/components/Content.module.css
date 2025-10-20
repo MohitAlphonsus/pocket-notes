@@ -1,0 +1,4 @@
+.content {
+  flex-basis: 75%;
+  background-color: var(--color-accent-light);
+}
