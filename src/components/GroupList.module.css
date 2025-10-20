@@ -1,0 +1,33 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  gap: 1rem;
+  height: 100%;
+  scrollbar-width: none;
+  overflow-y: scroll;
+}
+
+.list li {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 1rem 1rem 1rem 3rem;
+  gap: 2rem;
+  font-size: 2rem;
+}
+
+.list span:first-child {
+  display: inline-block;
+  height: 4.5rem;
+  width: 4.5rem;
+  border-radius: 50%;
+  background-color: red;
+  color: white;
+  display: grid;
+  place-content: center;
+}
+
+.list span:last-child {
+  flex-grow: 1;
+}
