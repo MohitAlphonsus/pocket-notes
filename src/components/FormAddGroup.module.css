@@ -34,21 +34,36 @@
   border: 1px solid #ccc;
 }
 
+.formGroup input:focus {
+  outline: none;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, .2);
+}
+
 .colors {
   display: flex;
-  gap: 1rem;
+  gap: 2rem;
 }
 
 .color {
+  display: inline-block;
   height: 3rem;
   width: 3rem;
+  background-color: red;
   border-radius: 50%;
   cursor: pointer;
   transition: all .2s ease-in-out;
+  display: grid;
+  place-content: center;
 }
 
 .color:hover {
   scale: 1.1;
+}
+
+.color:has(input:checked) {
+  scale: 1.1;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, .2);
+  outline-offset: 4px;
 }
 
 .btnAdd {
