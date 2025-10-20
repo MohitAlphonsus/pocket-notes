@@ -1,4 +1,34 @@
 .content {
   flex-basis: 75%;
   background-color: var(--color-accent-light);
+  display: grid;
+  place-content: center;
+  padding: 0 3rem;
+}
+
+.contentBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.heroImg {
+  width: calc(100% - 50%);
+}
+
+.heroImg img {
+  width: 100%;
+}
+
+.contentBox h1 {
+  font-size: 3rem;
+}
+
+.contentBox p {
+  font-size: 2rem;
+  text-align: center;
+  line-height: 1.6;
+  width: 80%;
 }
