@@ -21,11 +21,11 @@ export default function GroupContent() {
 				{notes.length > 0 ? (
 					notes.map(note => (
 						<div className={styles.note} key={note.id}>
-							<p>{note.noteText}</p>
+							<p>{note.note}</p>
 							<div className={styles.timestamp}>
-								<span>{note.date}</span>
+								<span>{note.datestamp}</span>
 								<span>&nbsp;</span>
-								<span>{note.time}</span>
+								<span>{note.timestamp}</span>
 							</div>
 						</div>
 					))
