@@ -1,5 +1,6 @@
 import styles from './GroupContent.module.css';
 import { useGroups } from '../context/NotesContext';
+import { FormAddNotes } from '../components';
 
 export default function GroupContent() {
 	const { currentActiveGroup } = useGroups();
@@ -32,15 +33,7 @@ export default function GroupContent() {
 					<p className={styles.noNotesMsg}>Add Notes</p>
 				)}
 			</div>
-			<div className={styles.formContainer}>
-				<form className={styles.form}>
-					<textarea placeholder="Enter your text here........"></textarea>
-					<button
-						type="submit"
-						className={`${styles.btnSubmit} ${styles.disabled}`}
-					></button>
-				</form>
-			</div>
+			<FormAddNotes />
 		</>
 	);
 }
