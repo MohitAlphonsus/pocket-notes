@@ -3,32 +3,46 @@ import { createContext, useContext, useState, useEffect } from 'react';
 const NotesContext = createContext();
 
 function NotesProvider({ children }) {
-	const [notes, setNotes] = useState(
+	const [groups, setGroups] = useState(
 		JSON.parse(localStorage.getItem('notes')) || [],
 	);
+	const [activeGroup, setActiveGroup] = useState(null);
+	const currentActiveGroup = groups.find(group => group.id === activeGroup);
 
 	function handleAddTitleToNotes(title, color) {
-		setNotes(prevNotes => [
+		setGroups(prevNotes => [
 			{ id: Date.now(), title, color, notes: [] },
 			...prevNotes,
 		]);
 	}
 
+	function handleSelectGroup(id) {
+		setActiveGroup(id);
+	}
+
 	useEffect(
 		function () {
-			localStorage.setItem('notes', JSON.stringify(notes));
+			localStorage.setItem('notes', JSON.stringify(groups));
 		},
-		[notes],
+		[groups],
 	);
 
 	return (
-		<NotesContext.Provider value={{ notes, onAddTitle: handleAddTitleToNotes }}>
+		<NotesContext.Provider
+			value={{
+				groups,
+				activeGroup,
+				currentActiveGroup,
+				onAddTitle: handleAddTitleToNotes,
+				onSelectGroup: handleSelectGroup,
+			}}
+		>
 			{children}
 		</NotesContext.Provider>
 	);
 }
 
-function useNotes() {
+function useGroups() {
 	const context = useContext(NotesContext);
 	if (context === undefined) {
 		throw new Error('useNotes is used outside NotesProvider');
@@ -36,4 +50,4 @@ function useNotes() {
 	return context;
 }
 
-export { NotesProvider, useNotes };
+export { NotesProvider, useGroups };
