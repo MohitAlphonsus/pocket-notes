@@ -1,9 +1,11 @@
-import { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useState, useEffect } from 'react';
 
 const NotesContext = createContext();
 
 function NotesProvider({ children }) {
-	const [notes, setNotes] = useState([]);
+	const [notes, setNotes] = useState(
+		JSON.parse(localStorage.getItem('notes')) || [],
+	);
 
 	function handleAddTitleToNotes(title, color) {
 		setNotes(prevNotes => [
@@ -11,6 +13,13 @@ function NotesProvider({ children }) {
 			...prevNotes,
 		]);
 	}
+
+	useEffect(
+		function () {
+			localStorage.setItem('notes', JSON.stringify(notes));
+		},
+		[notes],
+	);
 
 	return (
 		<NotesContext.Provider value={{ notes, onAddTitle: handleAddTitleToNotes }}>
