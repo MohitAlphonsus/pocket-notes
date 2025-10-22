@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useNotes } from '../context/NotesContext';
+import { useGroups } from '../context/NotesContext';
 import styles from './FormAddGroup.module.css';
 
 const colors = [
@@ -16,7 +16,7 @@ export default function FormAddGroup({ onClose }) {
 		color: '',
 	});
 
-	const { onAddTitle } = useNotes();
+	const { onAddTitle } = useGroups();
 
 	function handleSubmitGroupCreation(e) {
 		e.preventDefault();
