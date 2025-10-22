@@ -10,8 +10,11 @@ export default function GroupLIst() {
 			{notes.map(note => (
 				<li key={note.id}>
 					<span style={{ backgroundColor: note.color }}>
-						{note.title.split(' ')[0][0].toUpperCase() +
-							note.title.split(' ')[1][0].toUpperCase()}
+						{note.title
+							.split(' ')
+							.slice(0, 2)
+							.map(word => word[0].toUpperCase())
+							.join('')}
 					</span>
 					<span>{note.title}</span>
 				</li>
