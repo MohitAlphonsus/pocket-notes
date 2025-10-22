@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNotes } from '../context/NotesContext';
 import styles from './FormAddGroup.module.css';
 
 const colors = [
@@ -10,26 +11,25 @@ const colors = [
 	'#6691FF',
 ];
 export default function FormAddGroup({ onClose }) {
-	const [addNoteGroupData, setAddNoteGroupData] = useState({
+	const [addNoteGroup, setAddNoteGroup] = useState({
 		groupName: '',
 		color: '',
 	});
 
+	const { onAddTitle } = useNotes();
+
 	function handleSubmitGroupCreation(e) {
 		e.preventDefault();
-		if (
-			addNoteGroupData.groupName.trim() === '' ||
-			addNoteGroupData.color === ''
-		)
+		if (addNoteGroup.groupName.trim() === '' || addNoteGroup.color === '')
 			return;
-
+		onAddTitle(addNoteGroup.groupName, addNoteGroup.color);
 		onClose();
 	}
 
 	function handleChange(e) {
 		const { name, value } = e.target;
-		setAddNoteGroupData({
-			...addNoteGroupData,
+		setAddNoteGroup({
+			...addNoteGroup,
 			[name]: value,
 		});
 	}
@@ -46,7 +46,7 @@ export default function FormAddGroup({ onClose }) {
 						placeholder="Enter group name"
 						onChange={handleChange}
 						name="groupName"
-						value={addNoteGroupData.groupName}
+						value={addNoteGroup.groupName}
 					/>
 				</div>
 				<div className={styles.formGroup}>
@@ -69,7 +69,7 @@ export default function FormAddGroup({ onClose }) {
 										opacity: 0,
 									}}
 									name="color"
-									checked={addNoteGroupData.color === color}
+									checked={addNoteGroup.color === color}
 									onChange={handleChange}
 									value={color}
 								/>
