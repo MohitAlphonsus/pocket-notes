@@ -4,5 +4,14 @@ import Content from './Content';
 import Modal from './Modal';
 import FormAddGroup from './FormAddGroup';
 import GroupContent from './GroupContent';
+import FormAddNotes from './FormAddNotes';
 
-export { Sidebar, GroupList, Content, Modal, FormAddGroup, GroupContent };
+export {
+	Sidebar,
+	GroupList,
+	Content,
+	Modal,
+	FormAddGroup,
+	GroupContent,
+	FormAddNotes,
+};
