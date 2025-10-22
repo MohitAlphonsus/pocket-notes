@@ -15,12 +15,23 @@
   padding: 1rem 1rem 1rem 3rem;
   gap: 2rem;
   font-size: 2rem;
+  cursor: pointer;
+  border-radius: 1rem;
+}
+
+.list li:hover {
+  background-color: rgba(47, 47, 47, 0.17)
+}
+
+.list li.active {
+  background-color: rgba(47, 47, 47, 0.17)
 }
 
 .list span:first-child {
   display: inline-block;
-  height: 4.5rem;
-  width: 4.5rem;
+  font-size: 2.4rem;
+  height: 5rem;
+  width: 5rem;
   border-radius: 50%;
   background-color: red;
   color: white;
@@ -30,4 +41,5 @@
 
 .list span:last-child {
   flex-grow: 1;
+  font-size: 2.4rem;
 }

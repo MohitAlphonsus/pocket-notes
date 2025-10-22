@@ -1,22 +1,25 @@
 import styles from './GroupLIst.module.css';
-import { useNotes } from '../context/NotesContext';
+import { useGroups } from '../context/NotesContext';
 
-export default function GroupLIst() {
-	const { notes } = useNotes();
-	console.log(notes);
+export default function GroupList() {
+	const { groups, onSelectGroup, activeGroup } = useGroups();
 
 	return (
 		<ul className={styles.list}>
-			{notes.map(note => (
-				<li key={note.id}>
-					<span style={{ backgroundColor: note.color }}>
-						{note.title
+			{groups.map(group => (
+				<li
+					key={group.id}
+					className={`${group.id === activeGroup ? styles.active : ''}`}
+					onClick={() => onSelectGroup(group.id)}
+				>
+					<span style={{ backgroundColor: group.color }}>
+						{group.title
 							.split(' ')
 							.slice(0, 2)
 							.map(word => word[0].toUpperCase())
 							.join('')}
 					</span>
-					<span>{note.title}</span>
+					<span>{group.title}</span>
 				</li>
 			))}
 		</ul>
