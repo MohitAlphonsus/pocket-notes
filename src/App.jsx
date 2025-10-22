@@ -1,10 +1,12 @@
 import { Sidebar, Content } from './components';
-
+import { NotesProvider } from './context/NotesContext';
 export default function App() {
 	return (
-		<main className="app">
-			<Sidebar />
-			<Content />
-		</main>
+		<NotesProvider>
+			<main className="app">
+				<Sidebar />
+				<Content />
+			</main>
+		</NotesProvider>
 	);
 }
