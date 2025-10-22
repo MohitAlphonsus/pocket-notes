@@ -15,7 +15,7 @@ export default function Sidebar() {
 				+
 			</button>
 			<Modal showModal={showModal} onClose={() => setShowModal(false)}>
-				<FormAddGroup />
+				<FormAddGroup onClose={() => setShowModal(false)} />
 			</Modal>
 		</aside>
 	);

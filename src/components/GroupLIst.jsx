@@ -1,16 +1,19 @@
 import styles from './GroupLIst.module.css';
+import { useNotes } from '../context/NotesContext';
 
-const arr = [
-	{ id: 1, name: 'Html Group' },
-	{ id: 2, name: 'Css Group' },
-];
 export default function GroupLIst() {
+	const { notes } = useNotes();
+	console.log(notes);
+
 	return (
 		<ul className={styles.list}>
-			{arr.map(note => (
+			{notes.map(note => (
 				<li key={note.id}>
-					<span>{note.name.split(' ')[0][0] + note.name.split(' ')[1][0]}</span>
-					<span>{note.name}</span>
+					<span style={{ backgroundColor: note.color }}>
+						{note.title.split(' ')[0][0].toUpperCase() +
+							note.title.split(' ')[1][0].toUpperCase()}
+					</span>
+					<span>{note.title}</span>
 				</li>
 			))}
 		</ul>
