@@ -1,0 +1,51 @@
+.formContainer {
+  background-color: var(--color-accent-dark-2);
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  margin-top: auto;
+  padding: 2rem;
+}
+
+.form {
+  background-color: var(--color-white);
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+}
+
+.form textarea {
+  width: 100%;
+  height: 10rem;
+  border: none;
+  padding: 2rem;
+}
+
+.form textarea:focus {
+  outline: none;
+
+}
+
+.form textarea::placeholder {
+  opacity: .7;
+  font-size: 2rem;
+}
+
+.btnSubmit {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  border: none;
+  background: none;
+  height: 2rem;
+  width: 2rem;
+  background: url(../assets/send-light.svg) no-repeat center center/cover;
+  cursor: pointer;
+}
+
+.btnSubmit.disabled {
+  cursor: not-allowed;
+}
+
+.btnSubmit.active {
+  background: url(../assets/send-dark.svg) no-repeat center center/cover;
+}
