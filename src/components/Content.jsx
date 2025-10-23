@@ -7,9 +7,7 @@ export default function Content() {
 	const { currentActiveGroup, showSidebar } = useGroups();
 	return (
 		<section
-			className={`${styles.content} ${
-				showSidebar ? styles.hidden : styles.visible
-			}`}
+			className={`${styles.content} ${showSidebar ? styles.hidden : ''}`}
 		>
 			{currentActiveGroup ? (
 				<GroupContent />

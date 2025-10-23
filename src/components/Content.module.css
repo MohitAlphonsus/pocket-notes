@@ -43,10 +43,6 @@
   }
 
   .content.hidden {
-    transform: translateX(100%);
-  }
-
-  .content.visible {
-    transform: translateX(0);
+    display: none;
   }
 }

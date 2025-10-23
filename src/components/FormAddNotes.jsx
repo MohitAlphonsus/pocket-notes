@@ -1,10 +1,8 @@
-import { useState } from 'react';
 import styles from './FormAddNotes.module.css';
 import { useGroups } from '../context/NotesContext';
 
 export default function FormAddNotes() {
-	const [note, setNote] = useState('');
-	const { onAddNotes } = useGroups();
+	const { onAddNotes, note, setNote } = useGroups();
 
 	function handleSubmitNote(e) {
 		e.preventDefault();

@@ -2,7 +2,8 @@ import styles from './GroupLIst.module.css';
 import { useGroups } from '../context/NotesContext';
 
 export default function GroupList() {
-	const { groups, onSelectGroup, activeGroup, setShowSidebar } = useGroups();
+	const { groups, onSelectGroup, activeGroup, setShowSidebar } =
+		useGroups();
 
 	return (
 		<ul className={styles.list}>

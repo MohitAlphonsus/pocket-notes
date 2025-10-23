@@ -8,6 +8,7 @@ function NotesProvider({ children }) {
 	);
 	const [showSidebar, setShowSidebar] = useState(true);
 	const [activeGroup, setActiveGroup] = useState(null);
+	const [note, setNote] = useState('');
 	const currentActiveGroup = groups.find(group => group.id === activeGroup);
 
 	function handleAddTitleToGroups(title, color) {
@@ -63,6 +64,13 @@ function NotesProvider({ children }) {
 		[groups],
 	);
 
+	useEffect(
+		function () {
+			setNote('');
+		},
+		[activeGroup],
+	);
+
 	console.log(groups);
 	return (
 		<NotesContext.Provider
@@ -72,6 +80,8 @@ function NotesProvider({ children }) {
 				currentActiveGroup,
 				showSidebar,
 				setShowSidebar,
+				note,
+				setNote,
 				onAddTitle: handleAddTitleToGroups,
 				onSelectGroup: handleSelectGroup,
 				onAddNotes: handleAddNotesToGroup,

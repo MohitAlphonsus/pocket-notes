@@ -8,7 +8,12 @@ export default function GroupContent() {
 	return (
 		<>
 			<header className={styles.header}>
-				<button className={styles.btnBack} onClick={() => setShowSidebar(true)}>
+				<button
+					className={styles.btnBack}
+					onClick={() => {
+						setShowSidebar(true);
+					}}
+				>
 					&larr;
 				</button>
 				<span style={{ backgroundColor: color }}>
