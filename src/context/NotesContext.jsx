@@ -12,6 +12,15 @@ function NotesProvider({ children }) {
 	const currentActiveGroup = groups.find(group => group.id === activeGroup);
 
 	function handleAddTitleToGroups(title, color) {
+		const doesTitleExist = groups.some(
+			group => group.title.toLowerCase() === title.toLowerCase(),
+		);
+
+		if (doesTitleExist) {
+			alert('Group name already exists');
+			return;
+		}
+
 		setGroups(prevNotes => [
 			{ id: Date.now(), title, color, notes: [] },
 			...prevNotes,
