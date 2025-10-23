@@ -6,6 +6,7 @@ function NotesProvider({ children }) {
 	const [groups, setGroups] = useState(
 		JSON.parse(localStorage.getItem('notes')) || [],
 	);
+	const [showSidebar, setShowSidebar] = useState(true);
 	const [activeGroup, setActiveGroup] = useState(null);
 	const currentActiveGroup = groups.find(group => group.id === activeGroup);
 
@@ -69,6 +70,8 @@ function NotesProvider({ children }) {
 				groups,
 				activeGroup,
 				currentActiveGroup,
+				showSidebar,
+				setShowSidebar,
 				onAddTitle: handleAddTitleToGroups,
 				onSelectGroup: handleSelectGroup,
 				onAddNotes: handleAddNotesToGroup,
