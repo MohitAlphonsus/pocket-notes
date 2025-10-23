@@ -3,11 +3,14 @@ import { useGroups } from '../context/NotesContext';
 import { FormAddNotes } from '../components';
 
 export default function GroupContent() {
-	const { currentActiveGroup } = useGroups();
+	const { currentActiveGroup, setShowSidebar } = useGroups();
 	const { title, color, notes } = currentActiveGroup;
 	return (
 		<>
 			<header className={styles.header}>
+				<button className={styles.btnBack} onClick={() => setShowSidebar(true)}>
+					&larr;
+				</button>
 				<span style={{ backgroundColor: color }}>
 					{title
 						.split(' ')

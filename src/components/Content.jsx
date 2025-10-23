@@ -4,9 +4,13 @@ import { GroupContent } from '../components';
 import { useGroups } from '../context/NotesContext';
 
 export default function Content() {
-	const { currentActiveGroup } = useGroups();
+	const { currentActiveGroup, showSidebar } = useGroups();
 	return (
-		<section className={styles.content}>
+		<section
+			className={`${styles.content} ${
+				showSidebar ? styles.hidden : styles.visible
+			}`}
+		>
 			{currentActiveGroup ? (
 				<GroupContent />
 			) : (

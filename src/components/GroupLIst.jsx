@@ -2,7 +2,7 @@ import styles from './GroupLIst.module.css';
 import { useGroups } from '../context/NotesContext';
 
 export default function GroupList() {
-	const { groups, onSelectGroup, activeGroup } = useGroups();
+	const { groups, onSelectGroup, activeGroup, setShowSidebar } = useGroups();
 
 	return (
 		<ul className={styles.list}>
@@ -10,7 +10,10 @@ export default function GroupList() {
 				<li
 					key={group.id}
 					className={`${group.id === activeGroup ? styles.active : ''}`}
-					onClick={() => onSelectGroup(group.id)}
+					onClick={() => {
+						onSelectGroup(group.id);
+						setShowSidebar(false);
+					}}
 				>
 					<span style={{ backgroundColor: group.color }}>
 						{group.title
