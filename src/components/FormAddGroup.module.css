@@ -85,3 +85,34 @@
   box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
   transform: translateY(-1px);
 }
+
+
+@media (max-width:50em) {
+  .formContainer h2 {
+    font-size: 2rem;
+  }
+
+  .formGroup label,
+  .formGroup span {
+    font-size: 1.4rem;
+    flex-basis: 35%;
+  }
+
+  .colors {
+    gap: 1rem;
+  }
+
+  .formGroup input {
+    flex-basis: 70%;
+    border-radius: 5px;
+  }
+
+  .color {
+    height: 2rem;
+    width: 2rem;
+  }
+
+  .color:has(input:checked) {
+    outline-offset: 2px;
+  }
+}

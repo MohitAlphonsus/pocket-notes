@@ -4,6 +4,7 @@
   background-color: rgba(0, 0, 0, .5);
   display: grid;
   place-content: center;
+  z-index: 100;
 }
 
 .content {
@@ -29,4 +30,11 @@
 
 .btnClose:hover {
   opacity: 1;
+}
+
+
+@media (max-width:50em) {
+  .content {
+    width: 100%;
+  }
 }

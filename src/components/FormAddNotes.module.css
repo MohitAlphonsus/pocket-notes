@@ -51,3 +51,13 @@
 .btnSubmit.active {
   background: url(../assets/send-dark.svg) no-repeat center center/cover;
 }
+
+@media (max-width: 50em) {
+  .form textarea {
+    font-size: 1.4rem;
+  }
+
+  .form textarea::placeholder {
+    font-size: 1.4rem;
+  }
+}

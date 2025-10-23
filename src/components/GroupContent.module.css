@@ -83,4 +83,30 @@
   .btnBack {
     display: block;
   }
+
+  .header span:nth-child(2) {
+    font-size: 2rem;
+    height: 4rem;
+    width: 4rem;
+  }
+
+  .header span:last-child {
+    font-size: 2rem;
+  }
+
+  .notes {
+    padding: 1rem;
+  }
+
+  .note {
+    font-size: 1.4rem;
+  }
+
+  .timestamp {
+    font-size: 1.2rem;
+  }
+
+  .timestamp span:nth-child(2) {
+    font-size: 1.2rem;
+  }
 }
