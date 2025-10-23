@@ -37,3 +37,9 @@ body {
   overflow: hidden;
   color: var(--color-dark);
 }
+
+@media (max-width: 50em) {
+  .app {
+    width: 100%;
+  }
+}

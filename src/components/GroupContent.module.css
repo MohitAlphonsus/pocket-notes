@@ -7,7 +7,7 @@
   padding: 1rem 2rem;
 }
 
-.header span:first-child {
+.header span:nth-child(2) {
   display: inline-block;
   font-size: 2.4rem;
   height: 5rem;
@@ -67,4 +67,20 @@
   transform: translate(-50%, -50%);
   opacity: .2;
   font-size: 3rem;
+}
+
+.btnBack {
+  display: none;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 2rem;
+  color: var(--color-white);
+}
+
+
+@media(max-width: 50em) {
+  .btnBack {
+    display: block;
+  }
 }
