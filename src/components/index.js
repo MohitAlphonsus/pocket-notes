@@ -1,5 +1,5 @@
 import Sidebar from './Sidebar';
-import GroupList from './GroupList';
+import GroupLIst from './GroupLIst';
 import Content from './Content';
 import Modal from './Modal';
 import FormAddGroup from './FormAddGroup';
@@ -8,7 +8,7 @@ import FormAddNotes from './FormAddNotes';
 
 export {
 	Sidebar,
-	GroupList,
+	GroupLIst,
 	Content,
 	Modal,
 	FormAddGroup,

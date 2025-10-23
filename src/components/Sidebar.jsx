@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { GroupList, Modal, FormAddGroup } from '../components';
+import { GroupLIst, Modal, FormAddGroup } from '../components';
 import styles from './Sidebar.module.css';
 import { useGroups } from '../context/NotesContext';
 
@@ -16,7 +16,7 @@ export default function Sidebar() {
 			<header className={styles.header}>
 				<h2>Pocket Notes</h2>
 			</header>
-			<GroupList />
+			<GroupLIst />
 			<button className={styles.btnAdd} onClick={() => setShowModal(true)}>
 				+
 			</button>
